@@ -2,6 +2,8 @@ let express = require('express')
 var bodyParser = require('body-parser');
 var http = require('http');
 
+/************************************* EXPRESS APP CONFIG *************************************/
+
 // Main app
 var app = express()
 
@@ -29,16 +31,14 @@ app.use(function(req, res, next){
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-/********************* START APP *************************************/
+/************************************* START APP CONFIG *************************************/
 
 /** API Withdrawal Requests */
-var withdrawalRequests = require('./routes/withdrawal-requests');
-app.use('/api', withdrawalRequests);
+var clientsRouter = require('./routes/clients');
+app.use('/api/v1', clientsRouter);
 
-/*********************************************/
+/************************************* RUN SERVER *************************************/
 
-// Server
 var server = http.createServer(app);
 server.listen(3000);
-
-/******************************************************* */
+console.log('Server listening on port 3000');

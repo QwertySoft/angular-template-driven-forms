@@ -1,0 +1,8 @@
+div {
+    border: solid 1px purple;
+    margin-bottom: 10px;
+}
+
+:host.card-outline-primary {
+    color:red;
+}

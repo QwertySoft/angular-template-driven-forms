@@ -1,7 +1,12 @@
-<p>{{ text }}</p>
+<!-- <p>{{ text }}</p>
 <p>{{ today | date: 'dd/MM/yyyy' }}</p>
 <nav>
     <a routerLink="/angular/routing" routerLinkActive="active">Estudiar Angular</a>
     <a routerLink="/django" routerLinkActive="active">Estudiar Django</a>
 </nav>
 <router-outlet></router-outlet>
+
+<app-section [title]="'Aprendiendo Angular'" (event)="sectionAlive($event)"></app-section>
+<app-section [title]="'Aprendiendo Django'" (event)="sectionAlive($event)"></app-section> -->
+
+<app-hero-form></app-hero-form>

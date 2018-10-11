@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import Client from './models/clients.model';
 import { Observable } from 'rxjs';
@@ -8,7 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class ClientsService {
 
-  constructor(private http: HttpClient) { }
+  private obsv: Observable<string>;
+
+  constructor(private http: HttpClient) {
+    this.obsv = new Observable<string>((observer) => {
+      setInterval(() => {
+        observer.next(new Date().toISOString());
+      }, 1000);
+    });
+  }
 
   public getFromMock() {
     return [
@@ -35,4 +43,7 @@ export class ClientsService {
     return this.http.get<Client[]>('http://localhost:3000/api/v1/clients');
   }
 
+  public getObservable(): Observable<string> {
+    return this.obsv;
+  }
 }

@@ -7,12 +7,16 @@ import { AngularComponent } from './angular/angular.component';
 import { DjangoComponent } from './django/django.component';
 import { NotFountComponent } from './not-fount/not-fount.component';
 import { ClientListComponent } from './client-list/client-list.component';
+import { SectionComponent } from './section/section.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'clients', component: ClientListComponent },
   { path: 'angular/:section', component: AngularComponent },
   { path: 'angular', component: AngularComponent },
   { path: 'django', component: DjangoComponent },
+  { path: 'not-found', component: NotFountComponent },
   { path: '', component: ClientListComponent },
   { path: '**', component: NotFountComponent }
 ];
@@ -23,7 +27,9 @@ const appRoutes: Routes = [
     AngularComponent,
     DjangoComponent,
     NotFountComponent,
-    ClientListComponent
+    ClientListComponent,
+    SectionComponent,
+    HeroFormComponent
   ],
   entryComponents: [
   ],
@@ -33,7 +39,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     ),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

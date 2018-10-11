@@ -21,7 +21,7 @@ export class ClientListComponent implements OnInit {
       },
       () => {
         alert('No se pudieron obtener los clientes');
-        this.router.navigate(['**']);
+        this.router.navigate(['not-found']);
       }
     );
   }

@@ -1,5 +1,5 @@
 export default class Client {
-    id: string;
+    id: number;
     name: string;
     phone: string;
     address: string;

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NotFountComponent } from './not-fount/not-fount.component';
 import { ClientListComponent } from './client-list/client-list.component';
@@ -28,7 +27,6 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     ),
-    HttpClientModule,
     FormsModule
   ],
   providers: [],

@@ -12,18 +12,10 @@ export class ClientListComponent implements OnInit {
 
   public clients: Client[] = [];
 
-  constructor(private clientsService: ClientsService, private router: Router) { }
+  constructor(private clientsService: ClientsService) { }
 
   ngOnInit() {
-    this.clientsService.getFromApi().subscribe(
-      (data: Client[]) => {
-        this.clients = data;
-      },
-      () => {
-        alert('No se pudieron obtener los clientes');
-        this.router.navigate(['not-found']);
-      }
-    );
+    this.clients = this.clientsService.getFromMock();
   }
 
 }

@@ -1,24 +1,16 @@
 {
-  "name": "mssql-server-middleware",
+  "name": "chat_con_angular",
   "version": "1.0.0",
-  "description": "Adaptador para obtener datos de SQLServer",
+  "description": "Chat con la UDE y Qwertysoft",
   "main": "server.js",
+  "dependencies": {
+    "ws": "^6.1.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/qwertysoft_emporio/mssql-server-middleware.git"
-  },
-  "author": "@mzarza - Qwertysoft",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/qwertysoft_emporio/mssql-server-middleware#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "http": "0.0.0",
-    "lodash": "^4.17.11",
-    "tedious": "^2.6.4"
-  }
+  "author": "mzarza de Qwertysoft",
+  "license": "ISC"
 }

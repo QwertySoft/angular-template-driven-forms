@@ -1,44 +1,31 @@
-let express = require('express')
-var bodyParser = require('body-parser');
-var http = require('http');
+WebSocket = require('ws');
 
-/************************************* EXPRESS APP CONFIG *************************************/
+var port = process.env.PORT || 3000;
+var WebSocketServer = WebSocket.Server;
+var server = new WebSocketServer({ port: port });
 
-// Main app
-var app = express()
-
-/** CORS domain protect */
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
-
-    next();
-}
-app.use(allowCrossDomain);
-
-// logs every request
-app.use(function(req, res, next){
-	// output every request in the array
-	console.log({method:req.method, url: req.url, device: req.device});
-
-	// goes onto the next function in line
-	next();
+server.on('connection', ws => {
+    console.log('New connection arrived');
+	ws.on('message', message => {
+        try {
+            var data = JSON.parse(message);
+            console.log('New message received >>> ', data);
+			var chatMessage = {
+                user: data.user,
+                message: data.text,
+                date: new Date()
+            };
+			broadcast(JSON.stringify(chatMessage));
+		} catch (e) {
+			console.error(e.message);
+		}
+	});
 });
 
-// configure app to use bodyParser()
-// this will let us get the data from a POST
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+function broadcast(data) {
+	server.clients.forEach(client => {
+		client.send(data);
+	});	
+};
 
-/************************************* START APP CONFIG *************************************/
-
-/** API Withdrawal Requests */
-var clientsRouter = require('./routes/clients');
-app.use('/api/v1', clientsRouter);
-
-/************************************* RUN SERVER *************************************/
-
-var server = http.createServer(app);
-server.listen(3000);
-console.log('Server listening on port 3000');
+console.log('Server is running on port', 3000);

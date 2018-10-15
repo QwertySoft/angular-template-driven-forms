@@ -1,0 +1,19 @@
+.dash {
+    height: 95vh;
+    background-color: rgb(235, 231, 231);
+    word-break: break-word;
+    overflow-y: scroll;
+}
+
+%message {
+    border-radius: 3px;
+}
+
+.me {
+    @extend %message;
+    background-color: rgb(87, 137, 87);
+}
+.other {
+    @extend %message;
+    background-color: grey;
+}

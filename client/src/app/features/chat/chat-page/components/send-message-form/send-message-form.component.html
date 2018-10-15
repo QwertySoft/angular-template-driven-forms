@@ -1,4 +1,4 @@
-<form name="form" #form="ngForm">
+<form name="form">
   <input type="text" [(ngModel)]="message" name="message" required="" placeholder="Escribe un mensaje para tu comapañera/o" autofocus="">
   <button type="button" (click)="sendMessage()" [disabled]="!message">Enviar</button>
 </form>

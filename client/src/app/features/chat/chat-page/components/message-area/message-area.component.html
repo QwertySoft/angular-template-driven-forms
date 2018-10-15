@@ -1,6 +1,5 @@
 <div class="dash">
-    <div *ngFor="let chatMessage of chat">
-        <p>{{ chatMessage.user }} dijo ({{ chatMessage.date | date: 'd/m/yyyy'}})</p>
-        <p [ngClass]="{'me': chatMessage.user === username, 'other': chatMessage.user !== username}">{{ chatMessage.message }}</p>
-    </div>
+    <!-- TODO: iterar por los mensajes del chat -->
+    <!-- TODO: setear clase segun nombre de usuario -->
+    <!-- TODO: formatear fecha -->
 </div>

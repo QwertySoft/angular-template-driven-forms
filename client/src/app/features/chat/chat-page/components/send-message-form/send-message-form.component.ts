@@ -10,7 +10,7 @@ import Message from '../../../models/message.model';
 export class SendMessageFormComponent implements OnInit {
 
   public message = '';
-  @Input() public username: string;
+  // TODO: propiedad input 'username'
 
   constructor(private chatService: ChatService) { }
 
@@ -20,7 +20,7 @@ export class SendMessageFormComponent implements OnInit {
   public sendMessage() {
     const message = new Message(this.username, this.message);
     this.chatService.sendMessage(message);
-    this.message = '';
+    // TODO: blanquear input de mensaje
   }
 
 }

@@ -9,13 +9,13 @@ import { ChatService } from '../../../services/chat.service';
 })
 export class MessageAreaComponent implements OnInit {
 
-  @Input() public username: string;
+  // TODO: propiedad input 'username'
   public chat: Message[] = [];
 
   constructor(private chatService: ChatService) {
     this.chatService.observeForMessagesArrive().subscribe(
       (message: Message) => {
-        this.chat.push(message);
+        // TODO: agregar mensaje al chat
       }
     );
   }

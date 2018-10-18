@@ -1,0 +1,18 @@
+<!-- app.component.html -->
+
+<!-- Interpolacion de variable del padre -->
+<h1>{{ title }}</h1>
+
+<!-- Boton para invocar a un metodo del hijo mediante la ejecucion de un metodo del padre -->
+<button (click)="doOnChild()">Do on child</button>
+
+<!-- Separador -->
+<hr>
+
+<!-- Parrafo definido en el padre y que no se debe ver afectado por los estilos definidos en el hijo -->
+<p>El P del padre</p>
+
+<!-- Declaracion del componente hijo -->
+<!-- Tiene un @Input llamado 'text' que se rellena con el valor de la variable 'forChild' definida en el padre -->
+<!--  Tiene un @Output llamado 'emited' que cuando se detecta dicho evento, se ejecuta la funcion 'react' definida en el padre -->
+<app-child [text]="forChild" (emited)="react($event)"></app-child>

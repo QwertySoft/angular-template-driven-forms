@@ -1,0 +1,17 @@
+<!-- child.component.html -->
+
+<!-- Delimitador visual del componente para ver zona de hover -->
+<hr>
+
+{{ text }}
+
+<!-- Parrafo que se ve afectado por los estilos definidos en este mismo componente -->
+<p>
+  El P del hijo
+</p>
+
+<!-- Boton para emitir un evento hacia el padre mediante el metodo definido en el hijo llamado 'emitEvent' -->
+<button (click)="emitEvent()">Emitir evento</button>
+
+<!-- Delimitador visual del componente para ver zona de hover -->
+<hr>

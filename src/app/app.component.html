@@ -1,0 +1,17 @@
+<!-- app.component.html -->
+
+<!-- Mostramos una interpolacion de la variable 'today' de nuestro componente root combinando el pipe date definido por Angular -->
+<p>{{ today | date: 'dd/MM/yyyy' }}</p>
+
+<!-- Declaramos un elemento HTML estandar de navegacion -->
+<nav>
+    <!-- Declaramos un link para navegar a la vista de Angular utilizando la directiva 'routerLink' -->
+    <a routerLink="/angular">Estudiar Angular</a>
+    
+    <!-- Declaramos un link para navegar a la vista de Django utilizando la directiva 'routerLink' -->
+    <a routerLink="/django">Estudiar Django</a>
+</nav>
+
+<!-- Definimos el placeholder de navegacion -->
+<!-- Es donde Angular va a inyectar los componentes visuales de navegacion segun el estado de navegacion actual -->
+<router-outlet></router-outlet>

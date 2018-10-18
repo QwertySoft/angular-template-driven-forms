@@ -1,10 +1,11 @@
+// Le damos estilos a los inputs que tienen el estado de requerido valido
 .ng-valid[required],
 .ng-valid.required {
     border-left: 5px solid #42A948;
     /* green */
 }
 
+// Le damos estilos a los inputs que tienen el estado invalido, excepto al elemento HTML Form
 .ng-invalid:not(form) {
     border-left: 5px solid #a94442;
-    /* red */
 }

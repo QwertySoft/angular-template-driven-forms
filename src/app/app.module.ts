@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { ChildComponent } from './child/child.component';
+import { ExponentialPipe } from './exponential.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent, // Declaracion del componente padre
-    ChildComponent // Declaracion del componente hijo
+    AppComponent,
+    ExponentialPipe // Declaracion del componente padre
   ],
   entryComponents: [
   ],

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Hero } from './hero';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,13 @@ import { Hero } from './hero';
 })
 export class AppComponent {
 
+  public text: string;
+
   // Constructor del componente AppComponent
-  constructor() {
-    // Instanciamos nuestro modelo Hero
-    const hero = new Hero('Batman', 'Super Hight');
-    // Lo imprimimos en consola
-    console.log(hero);
+  constructor(
+    private apiService: ApiService
+  ) {
+    // Seteamos la propiedad 'text' del componente root de nuestra app con lo que nos devuelve el servicio
+    this.text = this.apiService.getText();
   }
 }

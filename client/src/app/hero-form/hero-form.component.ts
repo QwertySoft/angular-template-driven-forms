@@ -8,39 +8,29 @@ import { Hero } from '../hero';
 })
 export class HeroFormComponent implements OnInit {
 
+  // Definimos los valores que podemos seleccionar de nuestro select para la propiedad 'power' de nuestro modelo Hero
   public powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
-  public model = new Hero('', this.powers[0]);
-  public submitted = false;
 
+  // Definimos una variable y la inicializamos con una instancia de nuestra clase Hero.
+  // Aca nace nuestro objeto y la referencia a el la mantenemos en la propiedad 'model' de nuestro componente
+  public model = new Hero('', this.powers[0]);
+
+  // Constructor
   constructor() { }
 
+  // Hook onInit de Angular
   ngOnInit() {
   }
 
-  onSubmit() { alert(`Superheroe creado: ${this.model.name} => ${this.model.power}`); }
+  // Metodo ejecutado al submitear el formulario
+  onSubmit() {
+    // Mostramos un alerta con los datos de nuestro heroe cargado mediante el formulario
+    alert(`Superheroe creado: ${this.model.name} => ${this.model.power}`);
+  }
 
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
-
+  // Metodo para resetear los valores de nuestro modelo y por ende los valores del formulario tambien
   newHero() {
     this.model = new Hero('', '');
   }
-
-  // skyDog(): Hero {
-  //   let myHero =  new Hero('SkyDog',
-  //                          'Fetch any object at any distance',
-  //                          'Leslie Rollover');
-  //   console.log('My hero is called ' + myHero.name); // "My hero is called SkyDog"
-  //   return myHero;
-  // }
-
-  //////// NOT SHOWN IN DOCS ////////
-
-  // Reveal in html:
-  //   Name via form.controls = {{showFormControls(heroForm)}}
-  // showFormControls(form: any) {
-  //   return form && form.controls['name'] &&
-  //   form.controls['name'].value; // Dr. IQ
-  // }
 
 }

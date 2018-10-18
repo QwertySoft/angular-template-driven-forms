@@ -1,46 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { AngularComponent } from './angular/angular.component';
-import { DjangoComponent } from './django/django.component';
-import { NotFountComponent } from './not-fount/not-fount.component';
-import { ClientListComponent } from './client-list/client-list.component';
-import { SectionComponent } from './section/section.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { FormsModule } from '@angular/forms';
 
-const appRoutes: Routes = [
-  { path: 'clients', component: ClientListComponent },
-  { path: 'angular/:section', component: AngularComponent },
-  { path: 'angular', component: AngularComponent },
-  { path: 'django', component: DjangoComponent },
-  { path: 'not-found', component: NotFountComponent },
-  { path: '', component: ClientListComponent },
-  { path: '**', component: NotFountComponent }
-];
-
 @NgModule({
   declarations: [
-    AppComponent,
-    AngularComponent,
-    DjangoComponent,
-    NotFountComponent,
-    ClientListComponent,
-    SectionComponent,
-    HeroFormComponent
+    AppComponent, // Declaramos el componente root de nuestra app
+    HeroFormComponent  // Declaramos el componente que se encarga de gestionar el formulario para el modelo Hero
   ],
   entryComponents: [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
-    ),
     HttpClientModule,
-    FormsModule
+    FormsModule // Importamos el modulo de template driven forms
   ],
   providers: [],
   bootstrap: [AppComponent]

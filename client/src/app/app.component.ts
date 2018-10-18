@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from './api.service';
-import { ClientsService } from './clients.service';
+import { Hero } from './hero';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +7,12 @@ import { ClientsService } from './clients.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  text = 'Mi curso desarrollo web fullstack! :)';
-  today = new Date();
 
-  constructor(private service: ApiService, private clients: ClientsService) {
-    this.clients.getObservable().subscribe(
-      (date: string) => {
-        console.log(date);
-      }
-    );
+  // Constructor del componente AppComponent
+  constructor() {
+    // Instanciamos nuestro modelo Hero
+    const hero = new Hero('Batman', 'Super Hight');
+    // Lo imprimimos en consola
+    console.log(hero);
   }
-
-  sectionAlive(section) {
-    console.log(section);
-  }
-
 }

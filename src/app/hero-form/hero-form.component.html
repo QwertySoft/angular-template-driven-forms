@@ -3,7 +3,7 @@
     <h1>Hero Form</h1>
     
     <!-- Definimos el formulario con la directiva ngForm -->
-    <!-- Tambien utilizamos una variable de referencia de template #heroForm la cual referencia al elemento Form HTML del DOM -->
+    <!-- Tambien utilizamos una variable de referencia de template #heroForm la cual referencia al NgForm -->
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
       
       <!-- Imprimimos el valor de nuestro formulario -->
@@ -33,6 +33,7 @@
 
       <!-- Definimos boton para submitear el fomrulario -->
       <!-- Lo deshabilitamos si el valor del formularo es invalido -->
+      <!-- La propiedad 'form' de un NgForm es el FormGroup -->
       <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
       
       <!-- Definimos boton para resetear el modelo y el formulario a su estado inicial -->

@@ -1,23 +1,20 @@
-import { Injectable, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import Client from '../models/clients.model';
+import { HttpClient } from '@angular/common/http';
+import Client from './clients.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' // Indicamos que este servicio se proveera para toda la app > sera una instancia singleton
 })
 export class ClientsService {
 
-  private obsv: Observable<string>;
-
-  constructor(private http: HttpClient) {
-    this.obsv = new Observable<string>((observer) => {
-      setInterval(() => {
-        observer.next(new Date().toISOString());
-      }, 1000);
-    });
+  // Constructor del servico ClientsSerivice
+  constructor(
+    private http: HttpClient // Inyectamos el servicio para realizar requerimientos HTTP
+  ) {
   }
 
+  // Metodo que retorna el listado de clientes mockedos
   public getFromMock() {
     return [
       {
@@ -39,11 +36,9 @@ export class ClientsService {
     ];
   }
 
+  // Metodo para recuperar clientes desde la API REST
   public getFromApi(): Observable<Client[]> {
     return this.http.get<Client[]>('http://localhost:3000/api/v1/clients');
   }
 
-  public getObservable(): Observable<string> {
-    return this.obsv;
-  }
 }

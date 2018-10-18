@@ -1,5 +1,10 @@
+<!-- client-list.component.html -->
+
+<!-- Definimos la tabla donde se listaran los clientes -->
 <table>
+  <!-- Definimos la cabecera de la tabla -->
   <thead>
+    <!-- Definimos cada columna de la cabecera de la tabla -->
     <th>Id</th>
     <th>Name</th>
     <th>Phone</th>
@@ -7,8 +12,12 @@
     <th>Email</th>
     <th>Instagram</th>
   </thead>
+  <!-- Definimos el cuerpo de la tabla -->
   <tbody>
+    <!-- Definimos cada fila de la tabla -->
+    <!-- Se utiliza una directiva de estructura ngFor para iterar sobre el arreglo que tiene todos los clientes -->
     <tr *ngFor="let client of clients">
+      <!-- Definimos cada columna de cada fila de la tabla utilizando interpolacion con angular de la variable de iteracion llamada 'client' -->
       <td>{{ client.id }}</td>
       <td>{{ client.name }}</td>
       <td>{{ client.phone }}</td>

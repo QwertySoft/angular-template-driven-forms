@@ -30,7 +30,7 @@ export class HeroFormComponent implements OnInit {
 
   // Metodo para resetear los valores de nuestro modelo y por ende los valores del formulario tambien
   newHero() {
-    this.model = new Hero('', '');
+    this.model = new Hero('', this.powers[0]);
   }
 
 }

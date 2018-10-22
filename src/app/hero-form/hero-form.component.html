@@ -37,7 +37,7 @@
       <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
       
       <!-- Definimos boton para resetear el modelo y el formulario a su estado inicial -->
-      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+      <button type="button" class="btn btn-default" (click)="heroForm.reset(); newHero()">New Hero</button>
     </form>
   </div>
 </div>

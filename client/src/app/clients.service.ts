@@ -23,7 +23,8 @@ export class ClientsService {
         phone: '2983565091',
         address: 'Calle 6 635 1D',
         email: 'zmaximo1990@gmail.com',
-        instagram: 'https://www.instagram.com/zarzamaximo/'
+        instagram: 'https://www.instagram.com/zarzamaximo/',
+        avatar: 'https://media.tenor.com/images/d02f68f2b8785baa2e72115dec9bceed/tenor.gif'
       },
       {
         id: 2,
@@ -31,7 +32,8 @@ export class ClientsService {
         phone: null,
         address: 'Calle 61 522 2do 6to, ADV, B1904 La Plata, Pcia de Buenos Aires',
         email: 'qwertysoftar@gmail.com',
-        instagram: 'https://www.instagram.com/qwertysoftar/'
+        instagram: 'https://www.instagram.com/qwertysoftar/',
+        avatar: null
       }
     ];
   }

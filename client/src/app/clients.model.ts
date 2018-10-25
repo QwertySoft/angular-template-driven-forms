@@ -7,4 +7,5 @@ export default class Client {
     address: string;
     email: string;
     instagram: string;
+    avatar: string;
 }

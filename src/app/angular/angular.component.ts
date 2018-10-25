@@ -8,9 +8,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AngularComponent implements OnInit {
 
+  public param1: string;
+  public param2: string;
+
   // Constructor del componente AngularComponent
   constructor(
-    private route: ActivatedRoute, // Inyectamos servicio para saber informacion acerca del
+    private route: ActivatedRoute, // Inyectamos servicio para saber informacion acerca del estado de navegacion actual
     private router: Router //  Inyectamos servicio para poder navegar programaticamente
   ) {
 
@@ -26,6 +29,8 @@ export class AngularComponent implements OnInit {
     this.route.queryParamMap.subscribe((params) => {
       // Imprimimos los parametros recibidos de la navegacion
       console.log(params);
+      this.param1 = params.get('param');
+      this.param2 = params.get('parametro2');
     });
   }
 
